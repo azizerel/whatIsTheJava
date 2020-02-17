@@ -1,17 +1,22 @@
 package com.azizerel.javablog.common;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * created by Abdulaziz Erel on 21:18 10.02.2020
  **/
+@NoArgsConstructor
+@Getter
+@Setter
 public class BaseModel {
 
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    private Integer version;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private Long createdAt;
+
+    private Long lastModified;
 }

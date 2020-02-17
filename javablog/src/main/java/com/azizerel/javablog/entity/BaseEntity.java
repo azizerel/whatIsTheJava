@@ -1,25 +1,38 @@
 package com.azizerel.javablog.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
 
 /**
  * created by Abdulaziz Erel on 21:21 10.02.2020
  **/
 @MappedSuperclass
+@NoArgsConstructor
+@Getter
+@Setter
+@EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    @Version
+    @Column(name = "version")
+    private Integer version;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @CreatedDate
+    @Column(name = "created_at")
+    private Long createdAt;
+
+    @LastModifiedDate
+    @Column(name = "updated_at")
+    private Long lastModified;
 }
