@@ -6,4 +6,10 @@ package com.azizerel.javablog.constraints;
 public class ArticleConstraints {
     public static final String  TABLE_NAME = "BLOG_ARTICLE";
 
+    public static final int ARTICLE_CAPTION_MAX_SIZE = 200;
+    public static final int ARTICLE_CAPTION_MIN_SIZE = 2;
+
+    public static final int ARTICLE_CONTENT_MIN_SIZE = 2;
+    public static final int ARTICLE_CONTENT_MAX_SIZE = 4000;
+
 }
