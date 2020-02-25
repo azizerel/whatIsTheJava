@@ -22,7 +22,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public ArticleModel saveArticle(ArticleModel articleModel) {
-        ArticleEntity articleEntity = articleRepository.updateAndFlush(BaseCommonConverter.convert(articleModel, ArticleEntity.class));
+        ArticleEntity articleEntity = articleRepository.save(BaseCommonConverter.convert(articleModel, ArticleEntity.class));
         return BaseCommonConverter.convert(articleEntity, ArticleModel.class);
     }
 

@@ -18,7 +18,6 @@ public class ArticleRestController {
     @GetMapping("/javablog")
     public String bulkcreate() {
         ArticleEntity articleEntity = new ArticleEntity();
-        articleEntity.setName("aziz");
         repository.save(articleEntity);
 
         return "Customers are created";
