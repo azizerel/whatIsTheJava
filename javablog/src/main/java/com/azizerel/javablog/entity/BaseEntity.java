@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * created by Abdulaziz Erel on 21:21 10.02.2020
@@ -30,9 +31,9 @@ public class BaseEntity {
 
     @CreatedDate
     @Column(name = "created_at")
-    private Long createdAt;
+    private Date createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at")
-    private Long lastModified;
+    private Date lastModified;
 }

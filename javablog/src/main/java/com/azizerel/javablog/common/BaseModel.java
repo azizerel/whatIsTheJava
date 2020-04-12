@@ -7,9 +7,9 @@ import lombok.Setter;
 /**
  * created by Abdulaziz Erel on 21:18 10.02.2020
  **/
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class BaseModel {
 
     private Long id;

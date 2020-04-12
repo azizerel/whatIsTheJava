@@ -16,11 +16,11 @@ import java.util.Date;
 public class ArticleModel extends BaseModel {
 
     @NotNull
-    @Size(max = ArticleConstraints.ARTICLE_CAPTION_MAX_SIZE,min = ArticleConstraints.ARTICLE_CAPTION_MIN_SIZE)
+    @Size(max = ArticleConstraints.ARTICLE_CAPTION_MAX_SIZE, min = ArticleConstraints.ARTICLE_CAPTION_MIN_SIZE)
     private String caption;
 
     @NotNull
-    @Size(max = ArticleConstraints.ARTICLE_CONTENT_MAX_SIZE,min = ArticleConstraints.ARTICLE_CONTENT_MIN_SIZE)
+    @Size(max = ArticleConstraints.ARTICLE_CONTENT_MAX_SIZE, min = ArticleConstraints.ARTICLE_CONTENT_MIN_SIZE)
     private String content;
 
     @NotNull
