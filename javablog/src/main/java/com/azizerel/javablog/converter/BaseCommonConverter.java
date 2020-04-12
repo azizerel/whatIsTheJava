@@ -12,20 +12,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  **/
 public class BaseCommonConverter {
 
-    private static final ObjectMapper OBJ_MAPPER;
+    private static final ObjectMapper MAPPER;
 
     static {
-        OBJ_MAPPER = new ObjectMapper();
-        OBJ_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        OBJ_MAPPER.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-        OBJ_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+        MAPPER = new ObjectMapper();
+        MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        MAPPER.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        MAPPER.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
     }
 
     public static <MODEL> MODEL convert(Object from, Class<MODEL> clazz) {
-        return OBJ_MAPPER.convertValue(from, clazz);
+        return MAPPER.convertValue(from, clazz);
     }
 
     public static <MODEL> MODEL convert(Object from, TypeReference<MODEL> typeReference) {
-        return OBJ_MAPPER.convertValue(from, typeReference);
+        return MAPPER.convertValue(from, typeReference);
     }
 }
